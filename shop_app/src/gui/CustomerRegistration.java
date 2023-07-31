@@ -412,12 +412,33 @@ public class CustomerRegistration extends javax.swing.JFrame {
         }
     }
     private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
-     search();
+
+        int sortIndex = jComboBox1.getSelectedIndex();
+        
+        if(sortIndex==0){
+        
+            loadCustomer("first_name", "ASC", "0");
+        }else if(sortIndex==1){
+                loadCustomer("first_name", "DESC", "0");
+
+    }else if(sortIndex==2){
+                    loadCustomer("points", "DESC", "0");
+
+    }
+        else if(sortIndex==3){
+                    loadCustomer("points", "DESC", "0");
+
+    }
+        search();
             
     }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
 
+        String mobile = jTextField1.getText();
+        loadCustomer("first_name", "ASC", "0");
+        
+         
         search();
     }//GEN-LAST:event_jTextField1KeyReleased
 
